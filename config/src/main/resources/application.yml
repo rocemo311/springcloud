@@ -1,0 +1,19 @@
+server:
+  port: 8889 # 服务端口
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/ # 服务注册中心地址
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          search-paths: spring-config
+          uri: https://github.com/rocemo311/spring-config.git
+      label: master
+  application:
+    name: config-server # 服务名称
+
